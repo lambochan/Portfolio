@@ -62,14 +62,18 @@ body {
 	padding: 6rem 0;
 }
 
-.aboutImage {
-	max-width: 100%;
+.statsSection {
+	padding: 6rem 0;
 }
 
 .skillSection {
 	padding: 6rem 0;
 	background-image: linear-gradient(to right, #fc00ff , #00dbde);
 	color: #fff;
+}
+
+.aboutImage {
+	max-width: 100%;
 }
 
 .skill {
@@ -100,4 +104,47 @@ body {
 
 .chart .percent:after {
 	content: '%';
+}
+
+.squareItem {
+	position: relative;
+	margin-top: 2rem;
+}
+
+.squareInnerContainer {
+	position: relative;
+	padding: 3.125rem 1rem 2rem;
+	text-align: center;
+	border: 2px solid #444;
+	border-top: none;
+}
+
+.squareInnerContainer:before,
+.squareInnerContainer:after {
+	content: '';
+	position: absolute;
+	top: 0px;
+	width: 30%;
+	border-bottom: 2px solid #444;
+}
+
+.squareInnerContainer:before {
+	right: 0px;
+}
+
+.squareInnerContainer:after {
+	left: 0px;
+}
+
+.squareContent h2 {
+	font-size: 3.5rem;
+	margin-bottom: 10px;
+	font-weight: 400;
+	color: #fc00ff;
+}
+
+.squareContent h3 {
+	font-size: 1rem;
+	font-weight: 600;
+	margin: 0;
 }
