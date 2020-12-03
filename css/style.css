@@ -140,11 +140,22 @@ body {
 	font-size: 3.5rem;
 	margin-bottom: 10px;
 	font-weight: 400;
-	color: #fc00ff;
+	color: #444;
 }
 
 .squareContent h3 {
 	font-size: 1rem;
 	font-weight: 600;
 	margin: 0;
+}
+
+.squareIcon {
+	position: absolute;
+	left: 50%;
+	top: -2rem;
+	width: 40%;
+	height: 4.25rem;
+	font-size: 3rem;
+	margin-left: -20%;
+	color: #fc00ff;
 }
