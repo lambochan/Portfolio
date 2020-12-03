@@ -140,7 +140,7 @@ body {
 	font-size: 3.5rem;
 	margin-bottom: 10px;
 	font-weight: 400;
-	color: #444;
+	color: #fc00ff;
 }
 
 .squareContent h3 {
@@ -157,5 +157,5 @@ body {
 	height: 4.25rem;
 	font-size: 3rem;
 	margin-left: -20%;
-	color: #fc00ff;
+	color: #444;
 }
