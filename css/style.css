@@ -74,6 +74,8 @@ body {
 
 .aboutImage {
 	max-width: 100%;
+	border-radius: 10%;
+	box-shadow: 0 6px 6px #fc00ff;
 }
 
 .skill {
