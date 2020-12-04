@@ -14,25 +14,6 @@ $(document).ready(function() {
 		showCursor: false
 	});
 
-	// $('.owl-carousel').owlCarousel({
-	//     loop:true,
-	//     items: 4,
-	//     responsive:{
-	//         0:{
-	//             items:1
-	//         },
-	//         480:{
-	//             items:2
-	//         },
-	//         768:{
-	//             items:3
-	//         },
-	//         938:{
-	//             items:4
-	//         },
-	//     },
-	// });
-
 	var owl = $('.owl-carousel');
 		owl.owlCarousel({
 		    items:4,
@@ -63,6 +44,7 @@ $(document).ready(function() {
 	})
 
     var skillsTopOffset = $(".skillSection").offset().top;
+    var statsTopOffset = $(".statsSection").offset().top;
 
     $(window).scroll(function() {
     	if (window.pageYOffset > skillsTopOffset - $(window).height() + 300) {
@@ -78,5 +60,34 @@ $(document).ready(function() {
 				}
 		    });
     	}
+
+    	if (window.pageYOffset > statsTopOffset - $(window).height() + 300) {
+    		$('.counter').each(function() {
+			  var $this = $(this),
+			      countTo = $this.attr('data-count');
+			  
+			  $({ countNum: $this.text()}).animate({
+			    countNum: countTo
+			  },
+
+			  {
+
+			    duration: 3000,
+			    easing:'linear',
+			    step: function() {
+			      $this.text(Math.floor(this.countNum));
+			    },
+			    complete: function() {
+			      $this.text(this.countNum);
+			      //alert('finished');
+			    }
+			  });
+			});
+    	}
+
     });
+
 });
+
+
+
