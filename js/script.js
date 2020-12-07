@@ -1,7 +1,10 @@
-$(document).ready(function(){
-    window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
-        }; 
+$(window).on("load", function() {
+	$(".loader").fadeOut(1000);
+});
+
+$(window).on('beforeunload', function() {
+  $('body').hide();
+  $(window).scrollTop(0);
 });
 
 $(document).ready(function() {
@@ -44,10 +47,10 @@ $(document).ready(function() {
 		});
 		$('.play').on('click',function(){
 		    owl.trigger('play.owl.autoplay',[1000])
-	})
+	});
 		$('.stop').on('click',function(){
 		    owl.trigger('stop.owl.autoplay')
-	})
+	});
 
     var skillsTopOffset = $(".skillSection").offset().top;
     var statsTopOffset = $(".statsSection").offset().top;
@@ -122,6 +125,16 @@ $(document).ready(function() {
 
     });
 
+    $("#navigation li a").click(function(e) {
+    	e.preventDefault();
+
+    	var targetElement = $(this).attr("href");
+    	var targetPosition = $(targetElement).offset().top;
+
+    	$("html, body").animate({ scrollTop: targetPosition - 50 }, "slow");
+
+    });
+
     const nav = $("#navigation");
     const navTop = nav.offset().top;
 
@@ -131,9 +144,19 @@ $(document).ready(function() {
 
     	var body = $("body");
 
-    	if ($(window).scrollTop() >= navTop)
+    	if ($(window).scrollTop() >= navTop) {
+    		body.css("padding-top", nav.outerHeight() + "px");
+    		body.addClass("fixedNav");
+    	} else {
+    		body.css("padding-top", 0);
+    		body.removeClass("fixedNav");
+    	}
 
-    }
+    };
+
+    $('.navbar-nav>li>a').on('click', function(){
+	    $('.navbar-collapse').collapse('hide');
+	});
 
 });
 
