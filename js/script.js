@@ -1,5 +1,14 @@
 $(window).on("load", function() {
 	$(".loader").fadeOut(1000);
+
+	$(".items").isotope({
+    	filter: '*',
+    	animationOptions: {
+    		duration: 1500,
+    		easing: 'linear',
+    		queue: false
+    	}
+    });   
 });
 
 $(window).on('beforeunload', function() {
@@ -96,15 +105,6 @@ $(document).ready(function() {
     });
 
     $("[data-fancybox]").fancybox();
-
-    $(".items").isotope({
-    	filter: '*',
-    	animationOptions: {
-    		duration: 1500,
-    		easing: 'linear',
-    		queue: false
-    	}
-    });
 
     $("#filters a").click(function() {
     	$("#filters .current").removeClass("current");
